@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "851748654145",
+    "project_id": "preparation-fb9fa",
+    "storage_bucket": "preparation-fb9fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851748654145:android:99ad25a149e94bb9be0ac0",
+        "android_client_info": {
+          "package_name": "com.sun.preparation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7-v0jjumSXvzYnVdpXZBSlsu6qAWxZak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
