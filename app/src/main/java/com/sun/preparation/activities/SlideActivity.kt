@@ -13,11 +13,9 @@ import com.sun.preparation.adapter.SlideAdapter
 import com.sun.preparation.fragments.SlideFragment1
 import com.sun.preparation.fragments.SlideFragment2
 import com.sun.preparation.fragments.SlideFragment3
-import com.sun.preparation.MainActivity
 
 class SlideActivity : AppCompatActivity() {
     private val fragmentList = listOf(SlideFragment1(), SlideFragment2(), SlideFragment3())
-    private val titles = arrayOf("Slide 1", "Slide 2", "Slide 3")
     private var currentPosition = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +45,7 @@ class SlideActivity : AppCompatActivity() {
         }
 
         btnSkip.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
