@@ -10,12 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        // Retrieve the name from the Intent's extra
-        val name = intent.getStringExtra("name")
 
-        // Check if the name is not null and set it in a TextView
-        if (!name.isNullOrEmpty()) {
-            binding.textViewWelcome.text = "Welcome, $name!"
-        }
     }
 }

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Preparation"
         tools:targetApi="31">
         <activity
+            android:name=".activities.SelectedAvatarActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity

@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.sun.preparation.MainActivity
 import com.sun.preparation.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -19,7 +18,7 @@ class LoginActivity : AppCompatActivity() {
 
             // Create an Intent to start MainActivity
             if(name.isNotEmpty()){
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, SelectedAvatarActivity::class.java)
                 // Put the name as an extra in the Intent
                 intent.putExtra("name", name)
                 // Start MainActivity with the Intent
