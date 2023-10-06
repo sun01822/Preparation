@@ -1,9 +1,11 @@
 package com.sun.preparation.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.sun.preparation.MainActivity
 import com.sun.preparation.R
 import com.sun.preparation.adapter.AvatarAdapter
 import com.sun.preparation.data.Avatar
@@ -38,7 +40,17 @@ class SelectedAvatarActivity : AppCompatActivity() {
         binding.btnConfirmSelection.setOnClickListener {
             if (selectedAvatarNumber != -1) {
                 // Print the selected avatar number
-                println("Selected Avatar Number: $selectedAvatarNumber")
+                /*println("Selected Avatar Number: $selectedAvatarNumber")*/
+
+                // Create an Intent to start the MainActivity and pass the selectedAvatarNumber
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("selectedAvatarNumber", selectedAvatarNumber)
+
+                // Start the MainActivity
+                startActivity(intent)
+
+                // Finish the current activity (SelectedAvatarActivity) if needed
+                finish()
             } else {
                 // Handle the case when no avatar is selected (show an error message, etc.)
             }
@@ -47,5 +59,6 @@ class SelectedAvatarActivity : AppCompatActivity() {
         // Initialize RecyclerView with GridLayoutManager to show 3 avatars per row
         binding.recyclerViewAvatars.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter
+
     }
 }
