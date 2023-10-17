@@ -11,19 +11,74 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
         // Retrieve the selectedAvatarNumber from the Intent
-        val selectedAvatarNumber = intent.getIntExtra("selectedAvatarNumber", -1)
-
-        // Check if the value is valid (-1 means no value was provided)
-        if (selectedAvatarNumber != -1) {
-            // Use the selectedAvatarNumber in your MainActivity as needed
-            Log.d(TAG, "$selectedAvatarNumber")
-            binding.numberId.text = selectedAvatarNumber.toString()
-        } else {
-            // Handle the case when no avatar number was provided
-            println("No selected avatar number provided.")
+        val selectedAvatarNumber = intent.getStringExtra("selectedAvatarNumber").toString()
+        val userName = intent.getStringExtra("userName").toString()
+        // Perform actions based on selectedAvatarNumber
+        when (selectedAvatarNumber) {
+            "1" -> {
+                // Handle avatar number 1
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar1)
+            }
+            "2" -> {
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar2)
+            }
+            "3" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar3)
+            }
+            "4" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar4)
+            }
+            "5" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar5)
+            }
+            "6" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar6)
+            }
+            "7" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar7)
+            }
+            "8" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar8)
+            }
+            "9" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar9)
+            }
+            "10" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar10)
+            }
+            "11" ->{
+                // Handle avatar number 2
+                // For example, update the UI or perform specific actions
+                binding.profileImage.setImageResource(R.drawable.avatar11)
+            }
+            // Add more cases as needed
+            else -> {
+                // Handle cases where selectedAvatarNumber doesn't match any expected value
+                // For example, show an error message or perform a default action
+                binding.profileImage.setImageResource(R.drawable.ic_profile)
+            }
         }
     }
 }

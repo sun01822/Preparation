@@ -2,6 +2,7 @@ package com.sun.preparation.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +22,8 @@ class SelectedAvatarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySelectAvatarBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val userName = intent.getStringExtra("userName")
+        binding.nameTextView.text = userName + ", Please select an avatar"
 
         // Sample list of avatars (replace with your data)
         val avatars = listOf(
@@ -28,6 +31,13 @@ class SelectedAvatarActivity : AppCompatActivity() {
             Avatar(R.drawable.avatar2, 2),
             Avatar(R.drawable.avatar3, 3),
             Avatar(R.drawable.avatar4, 4),
+            Avatar(R.drawable.avatar5, 5),
+            Avatar(R.drawable.avatar6, 6),
+            Avatar(R.drawable.avatar7, 7),
+            Avatar(R.drawable.avatar8, 8),
+            Avatar(R.drawable.avatar9, 9),
+            Avatar(R.drawable.avatar10, 10),
+            Avatar(R.drawable.avatar11, 11),
             // Add more avatars as needed
         )
 
@@ -44,7 +54,8 @@ class SelectedAvatarActivity : AppCompatActivity() {
 
                 // Create an Intent to start the MainActivity and pass the selectedAvatarNumber
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("selectedAvatarNumber", selectedAvatarNumber)
+                intent.putExtra("userName", userName.toString())
+                intent.putExtra("selectedAvatarNumber", selectedAvatarNumber.toString())
 
                 // Start the MainActivity
                 startActivity(intent)
