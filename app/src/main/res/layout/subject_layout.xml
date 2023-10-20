@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="#EDEBEB"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Circular Image at the Top Left Corner -->
+        <!-- Circular Image at the Top Left Corner -->
+        <ImageView
+            android:id="@+id/subjectImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-5dp"
+            android:src="@drawable/ic_profile" />
+
+        <!-- Play Button Icon at the Top Right Corner -->
+        <ImageView
+            android:id="@+id/playButtonIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_play" />
+
+        <TextView
+            android:id="@+id/subjectName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subjectImage"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/playButtonIcon"
+            android:text="Your Title"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/progressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subjectName"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/playButtonIcon"
+            android:text="You completed 0%"
+            android:textColor="@android:color/background_dark"
+            android:textSize="12sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:layout_marginTop="3dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/custom_progress_bar1"
+            android:layout_below="@+id/progressText" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
