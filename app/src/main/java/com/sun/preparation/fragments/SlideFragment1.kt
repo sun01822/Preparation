@@ -18,8 +18,8 @@ class SlideFragment1 : Fragment() {
         // Inflate the layout for this fragment
         binding = SlideLayoutBinding.inflate(layoutInflater)
         Glide.with(requireContext()).load(R.drawable.first).into(binding.slideImage)
-        binding.slideTitle.setText(R.string.app_name)
-        binding.slideDescription.setText(R.string.app_name)
+        binding.slideTitle.setText("Exam Preparation")
+        binding.slideDescription.setText("Explore Our Question Sets for Effective Preparation")
         return binding.root
     }
 }
