@@ -1,6 +1,8 @@
 package com.sun.preparation.activities
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -17,12 +19,17 @@ class SelectedAvatarActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: AvatarAdapter
     private var selectedAvatarNumber: Int = -1 // Variable to store the selected avatar number
-
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var userName : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySelectAvatarBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val userName = intent.getStringExtra("userName")
+
+        // Initialize SharedPreferences
+        sharedPreferences = this.getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        userName = sharedPreferences.getString("userName", "User Name").toString()
+
         binding.nameTextView.text = userName + ", Please select an avatar"
 
         // Sample list of avatars (replace with your data)
@@ -51,13 +58,9 @@ class SelectedAvatarActivity : AppCompatActivity() {
             if (selectedAvatarNumber != -1) {
                 // Print the selected avatar number
                 /*println("Selected Avatar Number: $selectedAvatarNumber")*/
-
+                sharedPreferences.edit().putString("selectedAvatarNumber", selectedAvatarNumber.toString()).apply()
                 // Create an Intent to start the MainActivity and pass the selectedAvatarNumber
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("userName", userName.toString())
-                intent.putExtra("selectedAvatarNumber", selectedAvatarNumber.toString())
-
-                // Start the MainActivity
                 startActivity(intent)
 
                 // Finish the current activity (SelectedAvatarActivity) if needed
