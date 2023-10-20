@@ -10,5 +10,8 @@
     <color name="appColor">#ECEBF0</color>
 
     <color name="selectedItemOverlayColor">#80000000</color>
-
+    
+    <color name="progress_low">#FF1E1E</color>
+    <color name="progress_high">#06AA06</color>
+    <color name="progress_medium">#0D0DFF</color>
 </resources>
