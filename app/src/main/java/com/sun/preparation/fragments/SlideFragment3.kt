@@ -18,8 +18,8 @@ class SlideFragment3 : Fragment() {
         // Inflate the layout for this fragment
         binding = SlideLayoutBinding.inflate(layoutInflater)
         Glide.with(requireContext()).load(R.drawable.third).into(binding.slideImage)
-        binding.slideTitle.setText(R.string.app_name)
-        binding.slideDescription.setText(R.string.app_name)
+        binding.slideTitle.setText("Free Book Library")
+        binding.slideDescription.setText("Access Free Books to Expand Your Knowledge")
         return binding.root
     }
 }
