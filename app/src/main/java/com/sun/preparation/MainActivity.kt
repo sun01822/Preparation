@@ -1,6 +1,8 @@
 package com.sun.preparation
 
 import android.content.ContentValues.TAG
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,16 +15,21 @@ import com.sun.preparation.fragments.QuizFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var userName : String
+    private lateinit var selectedAvatarNumber : String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Retrieve the selectedAvatarNumber from the Intent
-        val selectedAvatarNumber = intent.getStringExtra("selectedAvatarNumber").toString()
-        val userName = intent.getStringExtra("userName").toString()
+        // Check cache for user data
+        sharedPreferences = this.getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        userName = sharedPreferences.getString("userName", "username").toString()
+        selectedAvatarNumber = sharedPreferences.getString("selectedAvatarNumber", "-1").toString()
 
-        binding.userName.text = userName
+
+        binding.userName.text = userName.lowercase()
         // Perform actions based on selectedAvatarNumber
         when (selectedAvatarNumber) {
             "1" -> {
