@@ -1,4 +1,5 @@
-import android.content.Context
+package com.sun.preparation.adapter
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,11 @@ import com.sun.preparation.data.Subject
 
 class SubjectAdapter(private val subjects: List<Subject>) :
     RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {
+    private var itemClickListener: OnItemClickListener? = null
+
+    interface OnItemClickListener {
+        fun onItemClick(subject: Subject)
+    }
 
     inner class SubjectViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val subjectName: TextView = itemView.findViewById(R.id.subjectName)
@@ -36,18 +42,25 @@ class SubjectAdapter(private val subjects: List<Subject>) :
         // Set progress text
         holder.progressText.text = "You completed " + holder.progressBar.progress.toString() + "%"
 
-
         // Set the progress bar color based on a condition
         val progressBarDrawable = when {
-            // Add your condition here
             subject.progress >= 70.0 -> ContextCompat.getDrawable(holder.progressBar.context, R.drawable.custom_progress_bar2)
             subject.progress >= 30.0 -> ContextCompat.getDrawable(holder.progressBar.context, R.drawable.custom_progress_bar3)
             else -> ContextCompat.getDrawable(holder.progressBar.context, R.drawable.custom_progress_bar1)
         }
         holder.progressBar.progressDrawable = progressBarDrawable
+
+        // Set the item click listener
+        holder.itemView.setOnClickListener {
+            itemClickListener?.onItemClick(subject)
+        }
     }
 
     override fun getItemCount(): Int {
         return subjects.size
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        itemClickListener = listener
     }
 }
