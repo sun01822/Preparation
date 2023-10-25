@@ -44,19 +44,17 @@ class HomeFragment : Fragment() {
 
     private fun generateSampleSubjects(): List<Subject> {
         val subjects = ArrayList<Subject>()
-        subjects.add(Subject(1, "Math", R.drawable.ic_profile, 20.0))
-        subjects.add(Subject(2, "Political Science", R.drawable.ic_profile,  40.0))
-        subjects.add(Subject(3, "History", R.drawable.ic_profile, 80.0))
-        subjects.add(Subject(3, "History", R.drawable.ic_profile, 80.0))
-        subjects.add(Subject(2, "Political Science", R.drawable.ic_profile,  40.0))
-        subjects.add(Subject(3, "History", R.drawable.ic_profile, 80.0))
-        subjects.add(Subject(1, "Math", R.drawable.ic_profile, 20.0))
-        subjects.add(Subject(2, "Political Science", R.drawable.ic_profile,  40.0))
-        subjects.add(Subject(2, "Political Science", R.drawable.ic_profile,  40.0))
-        subjects.add(Subject(3, "History", R.drawable.ic_profile, 80.0))
-        subjects.add(Subject(3, "History", R.drawable.ic_profile, 80.0))
-        subjects.add(Subject(2, "Political Science", R.drawable.ic_profile,  40.0))
-        subjects.add(Subject(3, "History", R.drawable.ic_profile, 80.0))
+        subjects.add(Subject(1, "বাংলা ভাষা ও সাহিত্য", R.drawable.id1, 0.0))
+        subjects.add(Subject(2, "English Language and Literature", R.drawable.id2,  0.0))
+        subjects.add(Subject(3, "বাংলাদেশ বিষয়াবলি", R.drawable.id3, 0.0))
+        subjects.add(Subject(4, "আন্তর্জাতিক বিষয়াবলি", R.drawable.id4, 0.0))
+        subjects.add(Subject(5, "ভুগোল", R.drawable.id5,  0.0))
+        subjects.add(Subject(6, "পরিবেশ ও দূর্যোগ ব্যবস্থাপনা", R.drawable.id6, 0.0))
+        subjects.add(Subject(7, "সাধারণ বিজ্ঞান", R.drawable.id7, 0.0))
+        subjects.add(Subject(8, "কম্পিউটার ও তথ্য প্রযুক্তি", R.drawable.id8,  0.0))
+        subjects.add(Subject(9, "গাণিতিক যুক্তি", R.drawable.id9,  0.0))
+        subjects.add(Subject(10, "মানসিক দক্ষতা", R.drawable.id10, 0.0))
+        subjects.add(Subject(11, "নৈতিকতা, মূল্যবোধ ও সুশাসন", R.drawable.id11, 0.0))
         // Add more subjects as needed
         return subjects
     }
