@@ -15,14 +15,12 @@
         android:padding="16dp">
 
         <!-- Circular Image at the Top Left Corner -->
-        <!-- Circular Image at the Top Left Corner -->
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/subjectImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="-5dp"
             android:src="@drawable/ic_profile" />
 
         <!-- Play Button Icon at the Top Right Corner -->
@@ -52,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/subjectName"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:layout_toStartOf="@id/playButtonIcon"
             android:text="You completed 0%"
