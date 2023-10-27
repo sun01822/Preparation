@@ -35,7 +35,7 @@
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="What Do You Wnat To Imporve?"
+            android:text="What Do You Want To Imporve?"
             android:textStyle="bold"
             android:textSize="35sp"
             android:textColor="@color/white"

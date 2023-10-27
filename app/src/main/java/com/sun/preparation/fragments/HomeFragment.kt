@@ -1,6 +1,7 @@
 package com.sun.preparation.fragments
 
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,17 @@ import com.sun.preparation.R
 import com.sun.preparation.adapter.SubjectAdapter
 import com.sun.preparation.data.Subject
 import com.sun.preparation.databinding.FragmentHomeBinding
+import com.sun.preparation.fragments.subjects.BanglaFragment
+import com.sun.preparation.fragments.subjects.BangladeshFragment
+import com.sun.preparation.fragments.subjects.CharacterFragment
+import com.sun.preparation.fragments.subjects.ComputerFragment
 import com.sun.preparation.fragments.subjects.EnglishFragment
+import com.sun.preparation.fragments.subjects.EnvironmentFragment
+import com.sun.preparation.fragments.subjects.GeneralScienceFragment
+import com.sun.preparation.fragments.subjects.GeographyFragment
+import com.sun.preparation.fragments.subjects.InternationalFragment
+import com.sun.preparation.fragments.subjects.MathematicalFragment
+import com.sun.preparation.fragments.subjects.PsycologicalFragment
 
 class HomeFragment : Fragment() {
 
@@ -43,7 +54,17 @@ class HomeFragment : Fragment() {
             override fun onItemClick(subject: Subject) {
                 val transaction = requireActivity().supportFragmentManager.beginTransaction()
                 val newFragment = when (subject.name) {
+                    "বাংলা ভাষা ও সাহিত্য" -> BanglaFragment()
                     "English Language and Literature" -> EnglishFragment() // Open EnglishFragment for "English"
+                    "বাংলাদেশ বিষয়াবলি" -> BangladeshFragment()
+                    "আন্তর্জাতিক বিষয়াবলি" -> InternationalFragment()
+                    "ভুগোল" -> GeographyFragment()
+                    "পরিবেশ ও দূর্যোগ ব্যবস্থাপনা" -> EnvironmentFragment()
+                    "সাধারণ বিজ্ঞান" -> GeneralScienceFragment()
+                    "কম্পিউটার ও তথ্য প্রযুক্তি" -> ComputerFragment()
+                    "গাণিতিক যুক্তি" -> MathematicalFragment()
+                    "মানসিক দক্ষতা" -> PsycologicalFragment()
+                    "নৈতিকতা, মূল্যবোধ ও সুশাসন" -> CharacterFragment()
                     else -> HomeFragment() // Open YourNextFragment for other titles
                 }
 
