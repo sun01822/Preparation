@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.sun.preparation.R
+import com.sun.preparation.databinding.FragmentEnglishBinding
 
 class EnglishFragment : Fragment() {
+    private lateinit var binding : FragmentEnglishBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_english, container, false)
+        binding = FragmentEnglishBinding.inflate(layoutInflater)
+        return binding.root
     }
 }
