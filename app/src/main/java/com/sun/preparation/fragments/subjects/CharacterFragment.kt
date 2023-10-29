@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.sun.preparation.R
+import com.sun.preparation.databinding.FragmentCharacterBinding
 
 class CharacterFragment : Fragment() {
+    private lateinit var binding: FragmentCharacterBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_character, container, false)
+        binding = FragmentCharacterBinding.inflate(layoutInflater)
+        return binding.root
     }
 }
