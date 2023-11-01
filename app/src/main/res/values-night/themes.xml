@@ -13,4 +13,11 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="PinkTimePickerDialog" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="colorAccent">#F2309F</item> <!-- Set your desired pink color -->
+        <item name="colorControlActivated">#F2309F</item> <!-- Use the same pink color for activated elements -->
+    </style>
+
+
 </resources>
