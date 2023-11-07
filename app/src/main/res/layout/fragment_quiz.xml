@@ -63,7 +63,8 @@
                 android:text="Sample Question?"
                 android:textColor="@color/black"
                 android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
 
             <!-- Answer Options -->
             <RadioGroup
